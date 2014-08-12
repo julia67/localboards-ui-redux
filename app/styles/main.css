@@ -1,87 +1,243 @@
-/* Space out content a bit */
 body {
-  padding-top: 0px;
-  padding-bottom: 20px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+
+a, a:visited {
+  color:#553B63;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+a:hover {
+  color:#443B4F;
 }
 
-.clickable {
-  cursor: pointer;
+
+.navbar {
+  margin-bottom:0;
+  background-color:#553B63;
+  color:#BDB8B7;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.navbar-default .navbar-nav > li > a:hover {
+  color:#FFFFFF;
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
+.navbar-default .navbar-nav > li > a {
+  color:#F3F0F1;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+.navbar-default .navbar-brand {
+  color:#FFFFFF;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
+.navbar-default .navbar-brand:hover {
+  color:#F3F0F1;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.dropdown-toggle:hover {
+  cursor:pointer;
+}
+
+.searchbar {
+  padding:15px;
+  border-bottom:1px solid #e7e7e7;
+}
+
+.board-wrapper.header {
+  border-bottom:1px solid #e7e7e7;
+}
+
+.board-wrapper span.title {
+  text-transform:uppercase;
+  font-size:1.25em;
+  font-weight:bold;
+  color:#553B63;
+}
+
+.modal-footer {
+  margin-top:0;
+  border-top:0;
+}
+
+/* Fixes weird negative margin */
+.row {
+  margin:0;
+  position:relative;
+}
+
+.board-wrap {
+  border-bottom:1px solid #e7e7e7;
+}
+
+.board-main {
+  padding: 15px 15px 15px 20%;
+  position: relative;
+  border-left:1px solid #e7e7e7;
+  font-size:100%;
+}
+
+.board-main > * {
+  padding-left:15px;
+}
+
+.board-main .caption {
+  font-size: 180%;
+  background-color: #f8f8f8;
+  padding: 15px 15px 7px 15px;
+  border: 1px solid #eaeaea;
+  border-radius: 2px;
+  margin: 0 0 0 15px;
+}
+
+.board-main .section {
+  padding: 15px 15px 7px 15px;
+  margin: 0 0 0 15px;
+}
+
+.board-openings {
+  min-width: 20%;
+  min-height: 100%;
+  background-color: #f8f8f8;
+  max-width: 20%;
+  position: absolute;
+  padding: 15px;
+  z-index:2;
+  font-size:120%;
+  text-align:right;
+}
+
+.board-openings.nobg {
+  background-color:#ffffff;
+}
+
+.header .board-openings.nobg {
+  background-color:#ffffff;
+  min-height:initial;
+}
+
+.board-label {
+  text-transform:uppercase;
+  font-size:12px;
+}
+
+.board-meta {
+  margin-top:30px;
+}
+
+.created {
+  font-size: 80%;
+  opacity: .8;
+  margin-bottom: 1em;
+  line-height: 1;
+  display: block;
+}
+
+h3, .h3 {
+  font-size:1.25em;
+  font-weight:bold;
+  margin:1em 0 .25em 0;
+}
+
+
+h4, .h4 {
+  font-size:1.25em;
+  font-weight:bold;
+  margin:0 0 .25em 0;
+}
+
+h4.board-title {
+  text-transform:inherit;
+}
+
+.board-wrapper ul, .board-wrapper ol {
+  padding-left: 32px;
+}
+
+
+.board-desc {
+  max-width:800px;
+}
+
+th, .orgInfo td:first-child {
+  text-transform:uppercase;
+  font-size:.9em;
+  opacity:.7;
+  vertical-align:bottom;
+}
+
+td:first-child {
+  padding-right: 20px;
+}
+
+.orgInfo td:first-child {
+  font-weight: bold;
+}
+
+.board-wrapper  h3 {
+  margin-bottom:10px;
+}
+
+.board-wrapper  div {
+  margin-bottom:30px;
+}
+
+
+.board-wrapper  a {
+  color:#553B63;
+  text-decoration:underline;
+}
+
+.board-wrapper  a:hover {
+  text-decoration:none;
+}
+
+.memberTitle {
+  text-transform:capitalize;
+  font-style:italic;
 }
 
 #loading {
   display:none;
+  padding:15px;
+}
+
+/* Full-width container, please */
+.container {
+  width: 100%;
+  padding:0;
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 100%;
+    padding:0;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+    padding:7px 0 0 0;
+  }
+}
+
+@media (max-width: 690px) {
+  .board-openings {
+    position:relative;
+    width:100%;
+    max-width:100%;
+    text-align:left;
+    background-color:#FFFFFF;
+    padding-bottom:0;
+  }
+  .board-main {
+    padding-left:0;
+  }
+  .search-block, .sort-block {
+    min-width:100%;
+    display:block;
+  }
+  .sort-block {
+    padding-top:7px;
+  }
 }

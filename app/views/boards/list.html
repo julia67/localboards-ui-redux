@@ -1,30 +1,40 @@
 <script src="scripts/api-localboards.js"></script>
-<div id="loading">loading...</div>
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span2">
+    <div class="searchbar span2">
       <!--Sidebar content-->
 
-      Search: <input ng-model="query">
-      Sort by:
-      <select ng-model="orderProp">
-        <option value="name">Alphabetical</option>
-        <option value="age">Newest</option>
-      </select>
+      <span class="search-block">Search: <input ng-model="query"></span>
+      <span class="sort-block">Sort by:
+        <select ng-model="orderProp">
+          <option value="name">Alphabetical</option>
+          <option value="age">Newest</option>
+        </select>
+      </span>
 
     </div>
-    <div class="span10">
-      <div class="boards" ng-repeat="board in boards | filter:query | orderBy:orderProp" class="thumbnail">
-        <div class="row">
-          <div class="span5">
-            <h4><a href="#/boards/{{board.id}}">{{board.title}}</a></h4>
-            <div class="seats">
-              <b>{{board.seatLimit()}}</b> <small>SEATS</small>
+    <div class="span10 boards-wrapper">
+        <div class="board-wrap" ng-repeat="board in boards | filter:query | orderBy:orderProp" class="thumbnail">
+          <div class="row">
+            <div class="board-openings">
+              <div class="seats" ng-if="board.seatLimit() != 'OPEN'">                
+                <b>{{board.openSeats}}</b> / <b>{{board.seatLimit()}}</b> <small>seats open</small>
+              </div>
+              <div class="seats" ng-if="board.seatLimit() == 'OPEN'">                
+                <b>{{board.seatLimit()}}</b> <small>seats</small>
+              </div>
+              
             </div>
-            <p>{{board.duties}}</p>
+            <div class="span5 board-main">
+              <h4><a href="#/boards/{{board.id}}">{{board.title}}</a></h4>
+              <!--<div class="seats">
+                <b>{{board.seatLimit()}}</b> <small>seats</small>
+              </div>-->
+              <p class="board-desc">{{board.duties}}</p>
+            </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
+<div id="loading">Loading...</div>
 </div>

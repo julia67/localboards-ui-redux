@@ -43,6 +43,7 @@ angular.module('localboardsApp')
 				else
 					return this.seats;
 			};
+			this.openSeats = 0;
 			api.getBoardMemberListFromStateBoardById('ne', this.id, 0, 1000);
 		});
 	}
